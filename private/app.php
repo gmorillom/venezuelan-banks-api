@@ -11,11 +11,10 @@
 	require_once("classes/Middlewares/Home.php");
 
 	$slim = Slim::create();
-<<<<<<< HEAD
+
 	//$slim->setBasePath("/API_LISTADO_DE_BANCOS"); Cuando inicio la API desde localhost
-=======
+
 	//$slim->setBasePath("/venezuelan-banks-api");
->>>>>>> b267105185d74ea6627e746223bf00bada059616
 	$slim->addRoutingMiddleware();
 
 	//Documentacion de la api
