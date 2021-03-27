@@ -1,0 +1,7 @@
+DirectoryIndex main.php #Indica que en esta carpeta main.php tiene prioridad de ejecutarse
+
+##Cuando trabajo con Slim debo usar esto
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ main.php [QSA,L]

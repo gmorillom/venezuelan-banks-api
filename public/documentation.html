@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es-Ve">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Lista de bancos venezolanos</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row bg-dark p-1">
+			<h1 class="display-3 text-center col text-white font-weight-bold">Listado de bancos venezolanos</h1>
+		</div>
+	</div>
+	<div class="container bg-light mt-5 p-4">
+		<p class="text-justify">
+			Has pruebas en tu aplicación con este listado de bancos existentes actualmente en Venezuela, obten información básica pero relevante de una entidad bancaria de manera sencilla y en un formato ligero(formato JSON).
+		</p>
+		<h3 class="font-weight-bold mb-3">API</h3>
+		<span class="text-justify">Las peticiones a una URI devuelven un conjunto de objetos JSON con la siguiente estructura:</span><br>
+		<code lang="text/json" class="text-info mt-3" style="font-size: 20px">
+			{<br>
+				"id":integer,<br>
+				"nombre":string,<br>
+				"estado":boolean,<br>
+				"codigo":string,<br>
+				"privado":boolean,<br>
+				"web":string,<br>
+				"telefono":string,<br>
+				"email":string<br>
+			}<br>
+		</code>
+		<h5 class="font-weight-bold mb-2">1.Tener todos los bancos</h5>
+		<span class="text-justify">Por medio de una petición <strong>HTTP GET</strong> accede a la URI <strong>http://localhost/API_LISTADO_DE_BANCOS/api/banca</strong>, la respuest sera devuelta en un arreglo de objetos en formato JSON con la siguiente estructura:</span><br>
+		<div class="border p-md-3 border-right-0 border-top-0 mt-3">
+			<code lang="text/json" class="text-info" style="font-size: 20px">
+				[<br>
+				{<br>
+					"id":"1",<br>
+					"nombre":"Banco Central de Venezuela",<br>
+					"estado":"1",<br>
+					"codigo":"0001",<br>
+					"privado":"0",<br>
+					"web":"http:\/\/www.bcv.org.ve\/",<br>
+					"telefono":"(+58-212) 8015111",<br>
+					"email":""<br>
+				},<br>
+				{<br>
+					"id":"2",<br>
+					"nombre":"Banco Industrial de Venezuela, C.A",<br>
+					"estado":"1",<br>
+					"codigo":"0003",<br>
+					"privado":"1",<br>
+					"web":"",<br>
+					"telefono":"(+58-212)4710102",<br>
+					"email":""<br>
+				},<br>
+				{<br>
+					"id":"3",<br>
+					"nombre":"Banco de Venezuela S.A.C.A. Banco Universal",<br>
+					"estado":"1",<br>
+					"codigo":"0102",<br>
+					"privado":"0",<br>
+					"web":"http:\/\/www.bancodevenezuela.com\/",<br>
+					"telefono":"(+58-412)2766581",<br>
+					"email":"servicios_alcliente@banvenez.com"<br>
+				},<br>
+				{<br>
+					"id":"4",<br>
+					"nombre":"Venezolano de Cr\u00e9dito, S.A. Banco Universal",<br>
+					"estado":"1",<br>
+					"codigo":"0104",<br>
+					"privado":"1",<br>
+					"web":"http:\/\/www.venezolano.com\/",<br>
+					"telefono":"(+58-212)8066111",<br>
+					"email":"defensoriadelcliente@venezolano.com"<br>
+				}<br>
+				]
+			</code>
+		</div>
+		<h5 class="font-weight-bold mb-2">2.Tener solo un banco</h5>
+		<span class="text-justify">Por medio de una petición <strong>HTTP GET</strong> accede a la URI <strong>http://localhost/API_LISTADO_DE_BANCOS/api/banca/id</strong>, proporcionando el id numerico de un banco, si el id es correcto se devuelve un arreglo con un solo elemento en formato JSON con la siguiente estructura:</span><br>
+		<div class="border p-md-3 border-right-0 border-top-0 mt-3">
+			<code lang="text/json" class="text-info" style="font-size: 20px">
+				[<br>
+				{<br>
+					"id":"1",<br>
+					"nombre":"Banco Central de Venezuela",<br>
+					"estado":"1",<br>
+					"codigo":"0001",<br>
+					"privado":"0",<br>
+					"web":"http:\/\/www.bcv.org.ve\/",<br>
+					"telefono":"(+58-212) 8015111",<br>
+					"email":""<br>
+				}<br>
+				]
+			</code>
+		</div>
+	</div>
+</body>
+</html>
