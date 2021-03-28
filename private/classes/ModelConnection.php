@@ -12,7 +12,7 @@ abstract class ModelConnection {
 
 	private function connection(){
 		$this->connection = pg_connect(
-			"host=$host dbname=$database user=$user password=$password"
+			"host=ec2-54-164-22-242.compute-1.amazonaws.com dbname=d84lvi7t6ooaja user=ottfmisxwsfvqk password=787a59fbdca7671699970f967bc7ff32be6a3ed2e09e1d01f5b06f37cf101e9e"
 		);
 	}
 
@@ -29,9 +29,6 @@ abstract class ModelConnection {
 
 	protected function multi_results(){
 		self::connection();
-
-
-		
 		$tmp = pg_query($this->connection,$this->sql);
 		while( $this->rows[] = pg_fetch_assoc($tmp) );
 		pg_free_result($tmp);
