@@ -12,7 +12,7 @@ abstract class ModelConnection {
 
 	private function connection(){
 		$this->connection = pg_connect(
-			"host='$host' dbname='$database' user='$user' password='$password'"
+			"host=$host dbname=$database user=$user password=$password"
 		);
 	}
 
