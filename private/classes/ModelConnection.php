@@ -29,6 +29,9 @@ abstract class ModelConnection {
 
 	protected function multi_results(){
 		self::connection();
+
+
+		
 		$tmp = pg_query($this->connection,$this->sql);
 		while( $this->rows[] = pg_fetch_assoc($tmp) );
 		pg_free_result($tmp);
