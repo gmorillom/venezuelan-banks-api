@@ -19,6 +19,7 @@ class Banks {
 		}
 
 		$res->withHeader("Content-Type","application/json");
+		$res->withHeader("charset","utf8");
 		$res->getBody()->write(utf8_decode(json_encode($results)));
 
 		return $res;
