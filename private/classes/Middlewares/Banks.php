@@ -19,7 +19,7 @@ class Banks {
 		}
 
 		$res->withHeader("Content-Type","application/json");
-		$res->getBody()->write(json_encode(utf8_decode($results)));
+		$res->getBody()->write(utf8_decode(json_encode($results)));
 
 		return $res;
 	}
