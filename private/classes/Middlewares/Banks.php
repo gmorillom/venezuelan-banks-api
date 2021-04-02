@@ -10,7 +10,7 @@ class Banks {
 		if( !empty($args) && settype($args["id"],"string") ){
 			
 			$bank = new Bank;
-			$privateId = "bnzlkd.ttt".$args["id"];
+			$privateId = "ttt".$args["id"];
 			$results = $bank->find($privateId);
 		}
 		else{
